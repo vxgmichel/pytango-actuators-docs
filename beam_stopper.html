@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BeamStopper Device Documentation &mdash; tangods-actuators  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="tangods-actuators  documentation" href="index.html" />
+    <link rel="next" title="BeamDump Device Documentation" href="beam_dump.html" />
+    <link rel="prev" title="FastClosingValve Device Documentation" href="fast_closing_valve.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-actuators"></span><div class="section" id="beamstopper-device-documentation">
+<h1>BeamStopper Device Documentation<a class="headerlink" href="#beamstopper-device-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="actuators.BeamStopper">
+<em class="property">class </em><code class="descclassname">actuators.</code><code class="descname">BeamStopper</code><a class="headerlink" href="#actuators.BeamStopper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tango Device for a beam stopper controlled by a PSS PLC.</p>
+<dl class="docutils">
+<dt>Device states description:</dt>
+<dd><ul class="first last simple">
+<li><strong>DevState.OPEN</strong>: status open</li>
+<li><strong>DevState.CLOSE</strong>: status closed</li>
+<li><strong>DevState.MOVING</strong>: intermediary position</li>
+<li><strong>DevState.DISABLE</strong>: not ok to open</li>
+<li><strong>DevState.FAULT</strong>: error</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="device-properties">
+<h2>Device properties<a class="headerlink" href="#device-properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="actuators.BeamStopper.CloseCmdTag">
+<code class="descclassname">BeamStopper.</code><code class="descname">CloseCmdTag</code><a class="headerlink" href="#actuators.BeamStopper.CloseCmdTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.ClosedStatusTag">
+<code class="descclassname">BeamStopper.</code><code class="descname">ClosedStatusTag</code><a class="headerlink" href="#actuators.BeamStopper.ClosedStatusTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as StatusClosed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.InfoTag">
+<code class="descclassname">BeamStopper.</code><code class="descname">InfoTag</code><a class="headerlink" href="#actuators.BeamStopper.InfoTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PLCDevice forwarded as Info.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.OkToOpenTag">
+<code class="descclassname">BeamStopper.</code><code class="descname">OkToOpenTag</code><a class="headerlink" href="#actuators.BeamStopper.OkToOpenTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PLCDevice forwarded as OkToOpen.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.OpenCmdTag">
+<code class="descclassname">BeamStopper.</code><code class="descname">OpenCmdTag</code><a class="headerlink" href="#actuators.BeamStopper.OpenCmdTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.OpenStatusTag">
+<code class="descclassname">BeamStopper.</code><code class="descname">OpenStatusTag</code><a class="headerlink" href="#actuators.BeamStopper.OpenStatusTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as StatusOpen.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.PLCDevice">
+<code class="descclassname">BeamStopper.</code><code class="descname">PLCDevice</code><a class="headerlink" href="#actuators.BeamStopper.PLCDevice" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Proxy device for attributes Info and OkToOpen.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.PlcDevice">
+<code class="descclassname">BeamStopper.</code><code class="descname">PlcDevice</code><a class="headerlink" href="#actuators.BeamStopper.PlcDevice" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Proxy device for attributes StatusOpen and StatusClosed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.PushEvents">
+<code class="descclassname">BeamStopper.</code><code class="descname">PushEvents</code><a class="headerlink" href="#actuators.BeamStopper.PushEvents" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : False</div>
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>Enable change events for all attributes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.UpdatePeriod">
+<code class="descclassname">BeamStopper.</code><code class="descname">UpdatePeriod</code><a class="headerlink" href="#actuators.BeamStopper.UpdatePeriod" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : 1.0</div>
+<div class="line">- dtype : float</div>
+</div>
+</dd>
+</dl>
+<p>Limit the refresh rate.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="actuators.BeamStopper.Conflict">
+<code class="descclassname">BeamStopper.</code><code class="descname">Conflict</code><a class="headerlink" href="#actuators.BeamStopper.Conflict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.Info">
+<code class="descclassname">BeamStopper.</code><code class="descname">Info</code><a class="headerlink" href="#actuators.BeamStopper.Info" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : int</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.Moving">
+<code class="descclassname">BeamStopper.</code><code class="descname">Moving</code><a class="headerlink" href="#actuators.BeamStopper.Moving" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.OkToOpen">
+<code class="descclassname">BeamStopper.</code><code class="descname">OkToOpen</code><a class="headerlink" href="#actuators.BeamStopper.OkToOpen" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.StatusClosed">
+<code class="descclassname">BeamStopper.</code><code class="descname">StatusClosed</code><a class="headerlink" href="#actuators.BeamStopper.StatusClosed" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if the valve is closed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.StatusOpen">
+<code class="descclassname">BeamStopper.</code><code class="descname">StatusOpen</code><a class="headerlink" href="#actuators.BeamStopper.StatusOpen" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if the valve is open.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="actuators.BeamStopper.Close">
+<code class="descclassname">BeamStopper.</code><code class="descname">Close</code><a class="headerlink" href="#actuators.BeamStopper.Close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command.</p>
+<p>Write the attribute &#8216;CloseCmdTag&#8217; of &#8216;PLCDevice&#8217; with value 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.GetInfo">
+<code class="descclassname">BeamStopper.</code><code class="descname">GetInfo</code><a class="headerlink" href="#actuators.BeamStopper.GetInfo" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Command:</dt>
+<dd><div class="first last line-block">
+<div class="line">- doc_out : Information about polling and events.</div>
+<div class="line">- dtype_out : str</div>
+</div>
+</dd>
+</dl>
+<p>Return information about polling and events.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.Open">
+<code class="descclassname">BeamStopper.</code><code class="descname">Open</code><a class="headerlink" href="#actuators.BeamStopper.Open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command.</p>
+<p>Write the attribute &#8216;OpenCmdTag&#8217; of &#8216;PLCDevice&#8217; with value 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.BeamStopper.Update">
+<code class="descclassname">BeamStopper.</code><code class="descname">Update</code><a class="headerlink" href="#actuators.BeamStopper.Update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command.</p>
+<p>Force the update of polled attributes.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">BeamStopper Device Documentation</a><ul>
+<li><a class="reference internal" href="#device-properties">Device properties</a></li>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="fast_closing_valve.html" title="previous chapter">FastClosingValve Device Documentation</a></li>
+      <li>Next: <a href="beam_dump.html" title="next chapter">BeamDump Device Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/beam_stopper.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, MAX IV.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/beam_stopper.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

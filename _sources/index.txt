@@ -1,0 +1,15 @@
+Welcome to tangods-actuators documentation!
+===========================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 1
+
+   camera_screen
+   beam_scraper
+   vacuum_valve
+   heat_absorber
+   fast_closing_valve
+   beam_stopper
+   beam_dump

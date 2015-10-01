@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FastClosingValve Device Documentation &mdash; tangods-actuators  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="tangods-actuators  documentation" href="index.html" />
+    <link rel="next" title="BeamStopper Device Documentation" href="beam_stopper.html" />
+    <link rel="prev" title="HeatAbsorber Device Documentation" href="heat_absorber.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-actuators"></span><div class="section" id="fastclosingvalve-device-documentation">
+<h1>FastClosingValve Device Documentation<a class="headerlink" href="#fastclosingvalve-device-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="actuators.FastClosingValve">
+<em class="property">class </em><code class="descclassname">actuators.</code><code class="descname">FastClosingValve</code><a class="headerlink" href="#actuators.FastClosingValve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tango Device for a fast-closing valve</p>
+<dl class="docutils">
+<dt>Device states description:</dt>
+<dd><ul class="first last simple">
+<li><strong>DevState.OPEN</strong>: the valve is open</li>
+<li><strong>DevState.CLOSE</strong>: the valve is closed</li>
+<li><strong>DevState.MOVING</strong>: intermediary position</li>
+<li><strong>DevState.FAULT</strong>: conflict or communication error</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="device-properties">
+<h2>Device properties<a class="headerlink" href="#device-properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="actuators.FastClosingValve.ClosedStatusTag">
+<code class="descclassname">FastClosingValve.</code><code class="descname">ClosedStatusTag</code><a class="headerlink" href="#actuators.FastClosingValve.ClosedStatusTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as StatusClosed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.ErrorTag">
+<code class="descclassname">FastClosingValve.</code><code class="descname">ErrorTag</code><a class="headerlink" href="#actuators.FastClosingValve.ErrorTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as StatusError.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.OpenCmdTag">
+<code class="descclassname">FastClosingValve.</code><code class="descname">OpenCmdTag</code><a class="headerlink" href="#actuators.FastClosingValve.OpenCmdTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.OpenStatusTag">
+<code class="descclassname">FastClosingValve.</code><code class="descname">OpenStatusTag</code><a class="headerlink" href="#actuators.FastClosingValve.OpenStatusTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : None</div>
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Attribute of PlcDevice forwarded as StatusOpen.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.PlcDevice">
+<code class="descclassname">FastClosingValve.</code><code class="descname">PlcDevice</code><a class="headerlink" href="#actuators.FastClosingValve.PlcDevice" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+<p>Proxy device for attributes StatusError, StatusOpen and StatusClosed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.PushEvents">
+<code class="descclassname">FastClosingValve.</code><code class="descname">PushEvents</code><a class="headerlink" href="#actuators.FastClosingValve.PushEvents" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : False</div>
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>Enable change events for all attributes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.ResetCmdTag">
+<code class="descclassname">FastClosingValve.</code><code class="descname">ResetCmdTag</code><a class="headerlink" href="#actuators.FastClosingValve.ResetCmdTag" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : str</div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.UpdatePeriod">
+<code class="descclassname">FastClosingValve.</code><code class="descname">UpdatePeriod</code><a class="headerlink" href="#actuators.FastClosingValve.UpdatePeriod" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Device property:</dt>
+<dd><div class="first last line-block">
+<div class="line">- default_value : 1.0</div>
+<div class="line">- dtype : float</div>
+</div>
+</dd>
+</dl>
+<p>Limit the refresh rate.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="actuators.FastClosingValve.Conflict">
+<code class="descclassname">FastClosingValve.</code><code class="descname">Conflict</code><a class="headerlink" href="#actuators.FastClosingValve.Conflict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if &#8216;StatusOpen&#8217; and &#8216;StatusClosed&#8217; are contradictory.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.Moving">
+<code class="descclassname">FastClosingValve.</code><code class="descname">Moving</code><a class="headerlink" href="#actuators.FastClosingValve.Moving" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if the valve is in an intermediary position.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.StatusClosed">
+<code class="descclassname">FastClosingValve.</code><code class="descname">StatusClosed</code><a class="headerlink" href="#actuators.FastClosingValve.StatusClosed" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if the valve is closed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.StatusError">
+<code class="descclassname">FastClosingValve.</code><code class="descname">StatusError</code><a class="headerlink" href="#actuators.FastClosingValve.StatusError" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if there is an error.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.StatusOpen">
+<code class="descclassname">FastClosingValve.</code><code class="descname">StatusOpen</code><a class="headerlink" href="#actuators.FastClosingValve.StatusOpen" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Attribute:</dt>
+<dd><div class="first last line-block">
+<div class="line">- dtype : bool</div>
+</div>
+</dd>
+</dl>
+<p>True if the valve is open.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="attribute">
+<dt id="actuators.FastClosingValve.GetInfo">
+<code class="descclassname">FastClosingValve.</code><code class="descname">GetInfo</code><a class="headerlink" href="#actuators.FastClosingValve.GetInfo" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Command:</dt>
+<dd><div class="first last line-block">
+<div class="line">- doc_out : Information about polling and events.</div>
+<div class="line">- dtype_out : str</div>
+</div>
+</dd>
+</dl>
+<p>Return information about polling and events.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.Open">
+<code class="descclassname">FastClosingValve.</code><code class="descname">Open</code><a class="headerlink" href="#actuators.FastClosingValve.Open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command.</p>
+<p>Write the attribute &#8216;OpenCmdTag&#8217; of &#8216;PlcDevice&#8217; with value 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.Reset">
+<code class="descclassname">FastClosingValve.</code><code class="descname">Reset</code><a class="headerlink" href="#actuators.FastClosingValve.Reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command.</p>
+<p>Write the attribute &#8216;ResetCmdTag&#8217; of &#8216;PlcDevice&#8217; with value 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="actuators.FastClosingValve.Update">
+<code class="descclassname">FastClosingValve.</code><code class="descname">Update</code><a class="headerlink" href="#actuators.FastClosingValve.Update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command.</p>
+<p>Force the update of polled attributes.</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">FastClosingValve Device Documentation</a><ul>
+<li><a class="reference internal" href="#device-properties">Device properties</a></li>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="heat_absorber.html" title="previous chapter">HeatAbsorber Device Documentation</a></li>
+      <li>Next: <a href="beam_stopper.html" title="next chapter">BeamStopper Device Documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/fast_closing_valve.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, MAX IV.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/fast_closing_valve.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
